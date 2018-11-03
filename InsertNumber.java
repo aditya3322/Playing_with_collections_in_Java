@@ -21,14 +21,14 @@ public class InsertNumber {
 	}
 
 	public static void insertUsingBinarySearch(List<Integer> list, int number) {
-		int position = findInsertPosition(list, 0, list.size() - 1, number);
+		int position = findPosition(list, 0, list.size() - 1, number);
 		list.add(position, number);
 	}
 
-	public static int findInsertPosition(List<Integer> list, int start,	int end, int num) {
+	public static int findPosition(List<Integer> list, int start,	int end, int num) {
 		int mid = (start + end) / 2;
 		if (list.get(end) < num)
-			findInsertPosition(list, start, end, num);
+			findPosition(list, start, end, num);
 		else
 			return mid + 1;
 		return -1;
